@@ -1,0 +1,3 @@
+127.0.0.1 - - [24/Aug/2020:15:22:29 -0600] "GET /privacy-policy HTTP/1.0" 499 0 "-" "ApacheBench/2.3"
+127.0.0.1 - - [24/Aug/2020:15:22:29 -0600] "GET / HTTP/1.0" 499 0 "-" "ApacheBench/2.3"
+127.0.0.1 - - [25/Aug/2020:13:40:05 -0600] "GET / HTTP/1.1" 500 595042 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"
