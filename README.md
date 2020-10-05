@@ -5,7 +5,7 @@ Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel fr
 
 ## Installation
 
-OS X & Linux:
+OS X & Linux `node >=12.16.1`:
 
 ```sh
 npm install -g @sherlog/cli
