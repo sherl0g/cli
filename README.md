@@ -39,12 +39,6 @@ npm run docker:build
 npm test
 ```
 
-## Release History
-
-* 0.0.2
-    * Initial Commit
-    * Fixes global node_modules path and renames fixtures getter
-
 ## Meta
 
 Bruce Lampson – [@Brucelampson](https://twitter.com/Brucelampson)
