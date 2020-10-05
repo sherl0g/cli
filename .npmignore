@@ -2,8 +2,10 @@
 .dockerignore
 .eslintignore
 .eslintrc.js
+.idea
 .nvmrc
-prettierrc
+.prettierrc
+deploy.sh
 Dockerfile
 jest.config.js
 src

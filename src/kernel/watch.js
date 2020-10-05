@@ -9,7 +9,6 @@ export default class Watch extends EventEmitter {
     const { hostname, files, chunks } = config;
     this.watcher = [];
     this.buffer = [];
-    this.count = 0;
     const payload = Number(chunks) || 1;
     this.config = files.forEach((f) => {
       const {
@@ -31,11 +30,6 @@ export default class Watch extends EventEmitter {
   }
 
   read(data) {
-    data.forEach((i) => {
-      this.count += i.values.length;
-    });
-
-    console.log(this.count);
     this.emit('buffer', data);
   }
 

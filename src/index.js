@@ -85,8 +85,8 @@ const init = (options) => {
         console.log('Sherlog listening on:');
         console.log('\n');
         console.log(`   - Dashboard:   ${chalk.green(URL)}`);
-        console.log(`   - Local:   ${chalk.green(`ws://localhost:${PORT}`)}`);
-        console.log(`   - Network:   ${chalk.green(`ws://${await internalIp.v4()}:${PORT}`)}`);
+        console.log(`   - Local:       ${chalk.green(`ws://localhost:${PORT}`)}`);
+        console.log(`   - Network:     ${chalk.green(`ws://${await internalIp.v4()}:${PORT}`)}`);
         const watch = new Watch(options);
         watch.on('buffer', (buffer) => {
           readableStream.push(toBuffer(buffer, Boolean(options.compression)));
@@ -114,7 +114,6 @@ const init = (options) => {
         });
 
         wss.on('connection', async () => {
-          console.log('connection');
           readableStream.emit('readable');
         });
 
