@@ -1,6 +1,6 @@
 {
   "name": "@sherlog/cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "bin/sherlog.js",
   "author": "Bruce Lampson <brucelampson@gmail.com>",
   "homepage": "https://github.com/sherl0g/cli",
