@@ -27,10 +27,65 @@ Commands:
   start [options]  start the server
   help [command]   display help for command
 ```
+## Getting started
+
+The following command will initialize your project and create a basic `.sherlog` config file.
+```sh
+sherlog init
+```
+```json
+{
+  "hostname": "",
+  "files": [
+    {
+      "metric": "",
+      "file": "",
+      "timezone": ""
+    }
+  ]
+}
+```
+## Config parameters
+
+* `hostname`:  default to your server hostname.
+* `backpressure`: the interval in milliseconds between each websocket message sent (default: `1000`).
+* `chunks`: max items stored for each metric chunk (default: `1`).
+* `compression`: uses [pako](https://github.com/nodeca/pako) to compress messages sent over to [Prisma](https://github.com/sherl0g/prisma). Set to `false` if you wish to consume the stream with a different tool  (default: `true`).
+* `files`: an array of services to monitor. The following options can be configured for each file.
+  * `metric`: supported metrics `apache2|monolog|mysql|nginx|php-fpm|redis`
+  * `file`: the absolute path to your log file.
+  * `eventType`: apache2 and/or nginx requires this property to be set to one of the following `http|error`.
+  * `timezone`: IANA time zone in which your logs are stored (e.g UTC, America/New York, etc),
+  * `fromBeginning`: set to true if you wish to read files from the beginning  (default: `false`).
+
+
+## Config example
+
+```json
+{
+  "hostname": "192.168.10.1",
+  "backpressure": 1000,
+  "chunks": 500,
+  "compression": true,
+  "files": [{
+    "metric": "nginx",
+    "file": "path/to/nginx/access.log",
+    "eventType": "http",
+    "timezone": "UTC",
+    "fromBeginning": true
+  },
+    {
+      "metric": "apache2",
+      "file": "path/to/nginx/error.log",
+      "eventType": "error",
+      "timezone": "UTC",
+      "fromBeginning": false
+    }]
+}
+```
+
 
 ## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
 ```sh
 npm install

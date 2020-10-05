@@ -74,7 +74,8 @@ const init = (options) => {
       const PORT = options.port || port;
       server.listen(PORT, async () => {
         const wss = new WebSocket.Server({ server });
-        const backpressure = Number(options.backpressure) || 1000;
+        const backpressure = options.backpressure ? Number(options.backpressure) : 1000;
+        const deflate = options.compression !== undefined ? Boolean(options.compression) : true;
         const toBuffer = (buffer, compress) => {
           if (!compress) return JSON.stringify(buffer);
           return pako.deflate(JSON.stringify(buffer), { to: 'string' });
@@ -89,7 +90,7 @@ const init = (options) => {
         console.log(`   - Network:     ${chalk.green(`ws://${await internalIp.v4()}:${PORT}`)}`);
         const watch = new Watch(options);
         watch.on('buffer', (buffer) => {
-          readableStream.push(toBuffer(buffer, Boolean(options.compression)));
+          readableStream.push(toBuffer(buffer, deflate));
         });
 
         const handler = debounce(() => {
