@@ -40,7 +40,7 @@ teardown() {
 @test "valid JSON schema" {
   switch_to_tmp_dir
   copy_file "nginx.access.log"
-  CONFIG_CONTENT=$(get_config_content ".nginx")
+  CONFIG_CONTENT=$(get_fixture ".nginx")
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   run node "$SUT" test
   [ "$status" -eq 0 ]
@@ -50,7 +50,7 @@ teardown() {
 @test "valid JSON schema with --config option" {
   switch_to_tmp_dir
   copy_file "nginx.access.log"
-  CONFIG_CONTENT=$(get_config_content ".nginx")
+  CONFIG_CONTENT=$(get_fixture ".nginx")
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   run node "$SUT" test --config "$SHERLOG_CONFIG_FILE_NAME"
   [ "$status" -eq 0 ]

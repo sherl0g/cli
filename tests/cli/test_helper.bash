@@ -26,7 +26,7 @@ copy_file () {
   echo "$(<"$BATS_TEST_DIRNAME"/fixtures/"$1")" > "$1"
 }
 
-get_config_content() {
+get_fixture() {
   if [ "$1" ]; then
     FILE=$1
   else

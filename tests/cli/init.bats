@@ -7,7 +7,7 @@ setup() {
 
 @test "init command should create a ${SHERLOG_CONFIG_FILE_NAME} configuration file" {
   run node "$SUT" init
-  CONFIG_CONTENT=$(get_config_content)
+  CONFIG_CONTENT=$(get_fixture)
   GENERATED_CONFIG=$(cat ./"$SHERLOG_CONFIG_FILE_NAME")
   [ "$status" -eq 0 ]
   [ "$output" =  "creating ${SHERLOG_CONFIG_FILE_NAME}" ]
@@ -15,7 +15,7 @@ setup() {
 }
 
 @test "init command should prompt to pass the --force option to overwrite existing config file" {
-  CONFIG_CONTENT=$(get_config_content)
+  CONFIG_CONTENT=$(get_fixture)
   echo "$CONFIG_CONTENT" > "$SHERLOG_CONFIG_FILE_NAME"
   run node "$SUT" init
   [ "$status" -eq 1 ]

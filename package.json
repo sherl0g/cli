@@ -1,7 +1,14 @@
 {
-  "name": "sherlog-cli",
+  "name": "@sherlog/cli",
   "version": "0.0.1",
   "main": "bin/sherlog.js",
+  "author": "Bruce Lampson <brucelampson@gmail.com>",
+  "homepage": "https://github.com/sherl0g/cli",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git"
+  },
   "os": [
     "!win32"
   ],
@@ -14,7 +21,7 @@
     "build": "NODE_ENV=production webpack --progress --hide-modules --config webpack.prod.js && chmod +x bin/sherlog.js",
     "docker:build": "docker build -t sherlog/cli .",
     "docker:test": "npm run build && npm run docker:build && docker run sherlog/cli",
-    "test": "tests/run.sh",
+    "test": "npm run docker:test",
     "cli:test": "bats tests/cli",
     "integration:test": "jest --config=jest.config.js tests/Integration",
     "lint": "eslint --ignore-path .eslintignore .",

@@ -1,0 +1,11 @@
+{
+  "hostname": "",
+  "files": [
+    {
+      "metric": "nginx",
+      "file": "path/nginx.access.log",
+      "eventType": "http",
+      "timezone": "UTC"
+    }
+  ]
+}

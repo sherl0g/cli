@@ -53,12 +53,12 @@ const init = (options) => {
   app.use(compression());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
-  const dir = path.normalize(`${process.execPath}/../../lib/node_modules/sherlog-cli/public`);
+  const dir = path.normalize(`${process.execPath}/../../lib/node_modules/${Package.name}/public`);
   if (!fs.existsSync(dir)) {
     console.log('Unable to locate your global node_modules path');
     process.exit(1);
   }
-  app.use(express.static(dir)); // TODO write a test
+  app.use(express.static(dir));
 
   app.get('/ready', (req, res) => {
     res.send('UP');

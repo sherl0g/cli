@@ -4,7 +4,7 @@ load test_helper
 @test "it should fail if the config file has an invalid \"file\" property value" {
   switch_to_tmp_dir
   copy_file "nginx.access.log"
-  CONFIG_CONTENT=$(get_config_content ".nginx")
+  CONFIG_CONTENT=$(get_fixture ".nginx")
   echo "$CONFIG_CONTENT" > "$SHERLOG_CONFIG_FILE_NAME"
   run node "$SUT" start "$SHERLOG_CONFIG_FILE_NAME"
   [ "$status" -eq 1 ]
@@ -14,7 +14,7 @@ load test_helper
 @test "it should fail if the config file has an invalid \"file\" property value with --config option" {
   switch_to_tmp_dir
   copy_file "nginx.access.log"
-  CONFIG_CONTENT=$(get_config_content ".nginx")
+  CONFIG_CONTENT=$(get_fixture ".nginx")
   echo "$CONFIG_CONTENT" > "$SHERLOG_CONFIG_FILE_NAME"
   run node "$SUT" start --config "$SHERLOG_CONFIG_FILE_NAME"
   [ "$status" -eq 1 ]
@@ -24,7 +24,7 @@ load test_helper
 @test "it should start a web server on port 8000 GET | /ready" {
   switch_to_tmp_dir
   copy_file "nginx.access.log"
-  CONFIG_CONTENT=$(get_config_content ".nginx")
+  CONFIG_CONTENT=$(get_fixture ".nginx")
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   run node "$SUT" start --config "$SHERLOG_CONFIG_FILE_NAME" &
   sleep 3
