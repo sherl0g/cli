@@ -1,5 +1,7 @@
 # @sherlog/cli
-> Lightweight unified logs as stream.
+> Unified logs as stream.
+
+Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel free to consume the stream with any tool or programming language of your preference.
 
 ## Installation
 
@@ -12,7 +14,7 @@ npm install -g @sherlog/cli
 
 ## Usage
 
-You can use the --help option to get more details about the commands and their options
+You can use the --help option to get more details about options and commands
 
 ```sh
 Usage: sherlog [options] [command]
