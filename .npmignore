@@ -5,6 +5,7 @@
 .idea
 .nvmrc
 .prettierrc
+prisma-social.png
 deploy.sh
 Dockerfile
 jest.config.js

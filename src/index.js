@@ -28,7 +28,9 @@ import { Readable } from 'stream';
 import internalIp from 'internal-ip';
 import clear from 'console-clear';
 import Watch from '@kernel/watch';
-import Package from '@root/package.json';
+
+const globalNodeModulesPath = path.normalize(`${process.execPath}/../../lib/node_modules/@sherlog/cli`);
+const Package = JSON.parse(fs.readFileSync(`${globalNodeModulesPath}/package.json`, 'utf8'));
 
 const readableStream = new Readable({
   highWaterMark: 100000,
@@ -53,7 +55,7 @@ const init = (options) => {
   app.use(compression());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
-  const dir = path.normalize(`${process.execPath}/../../lib/node_modules/${Package.name}/public`);
+  const dir = `${globalNodeModulesPath}/public`;
   if (!fs.existsSync(dir)) {
     console.log('Unable to locate your global node_modules path');
     process.exit(1);

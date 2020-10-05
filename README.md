@@ -3,6 +3,14 @@
 
 Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel free to consume the stream with any other tool or programming language of your preference.
 
+<p align="center">
+  <br>
+  <img src="prisma-social.png" alt="Prisma Client" width="640" height="320">
+  <br>
+  <br>
+</p>
+
+
 ## Installation
 
 OS X & Linux `node >=12.16.1`:
@@ -51,7 +59,7 @@ sherlog init
 
 * `hostname`:  default to your server hostname.
 * `backpressure`: the interval in milliseconds between each websocket message sent (default: `1000`).
-* `chunks`: max items stored for each metric chunk (default: `1`).
+* `chunks`: max items stored in buffer for each metric chunk (default: `1`).
 * `compression`: uses [pako](https://github.com/nodeca/pako) to compress messages sent over to [Prisma](https://github.com/sherl0g/prisma). Set to `false` if you wish to consume the stream with a different tool  (default: `true`).
 * `files`: an array of services to monitor. The following options can be configured for each file.
   * `metric`: supported metrics `apache2|monolog|mysql|nginx|php-fpm|redis`

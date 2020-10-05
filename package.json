@@ -3,6 +3,13 @@
   "version": "0.0.14",
   "main": "bin/sherlog.js",
   "author": "Bruce Lampson <brucelampson@gmail.com>",
+  "description": "In-Memory observability tool for service logs",
+  "keywords": [
+    "monitor",
+    "observability",
+    "logs",
+    "telemetry"
+  ],
   "homepage": "https://github.com/sherl0g/cli",
   "license": "MIT",
   "repository": {
