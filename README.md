@@ -77,7 +77,7 @@ sherlog init
     "fromBeginning": true
   },
     {
-      "metric": "apache2",
+      "metric": "nginx",
       "file": "path/to/nginx/error.log",
       "eventType": "error",
       "timezone": "UTC",
