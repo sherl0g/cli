@@ -41,8 +41,9 @@ npm test
 
 ## Release History
 
-* 0.0.1
+* 0.0.2
     * Initial Commit
+    * Fixes global node_modules path and renames fixtures getter
 
 ## Meta
 

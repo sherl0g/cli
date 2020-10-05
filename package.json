@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/babel/babel.git"
+    "url": "https://github.com/sherl0g/cli.git"
   },
   "os": [
     "!win32"
