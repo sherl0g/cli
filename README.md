@@ -1,6 +1,8 @@
 # @sherlog/cli
 > Unified logs as stream.
 
+[![Build Status](https://travis-ci.com/sherl0g/cli.svg?branch=main)](https://travis-ci.com/sherl0g/cli)
+
 Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel free to consume the stream with any other tool or programming language of your preference.
 
 <p align="center">
