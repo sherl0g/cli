@@ -5,6 +5,7 @@
 .idea
 .nvmrc
 .prettierrc
+.travis.yml
 prisma-social.png
 deploy.sh
 Dockerfile
