@@ -27,7 +27,7 @@
     "dev": "webpack --env.NODE_ENV=dev --config webpack.dev.js",
     "build": "NODE_ENV=production webpack --progress --hide-modules --config webpack.prod.js && chmod +x bin/sherlog.js",
     "docker:build": "docker build -t sherlog/cli .",
-    "docker:test": "npm run build && npm run docker:build && docker run sherlog/cli",
+    "docker:test": "npm run docker:build && docker run sherlog/cli",
     "test": "npm run docker:test",
     "cli:test": "bats tests/cli",
     "integration:test": "jest --config=jest.config.js tests/Integration",
