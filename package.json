@@ -48,7 +48,7 @@
     "console-clear": "^1.1.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "helmet": "^3.23.3",
+    "helmet": "^4.1.1",
     "internal-ip": "^6.1.0",
     "lodash": "^4.17.20",
     "moment-timezone": "^0.5.31",
