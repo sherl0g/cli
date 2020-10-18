@@ -2,10 +2,13 @@
 
 import fs from 'fs';
 import path from 'path';
-import {
-  assign, compact, debounce, get,
-  isEmpty, map, size,
-} from 'lodash';
+import assign from 'lodash/assign';
+import compact from 'lodash/compact';
+import debounce from 'lodash/debounce';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import map from 'lodash/map';
+import size from 'lodash/size';
 import portfinder from 'portfinder';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -17,15 +20,12 @@ import WebSocket from 'ws';
 import http from 'http';
 import os from 'os';
 import commander from 'commander';
-
 import Ajv from 'ajv';
 import moment from 'moment-timezone';
 import open from 'open';
 import chalk from 'chalk';
 import pako from 'pako';
-
 import { Readable } from 'stream';
-import internalIp from 'internal-ip';
 import clear from 'console-clear';
 import Watch from '@kernel/watch';
 
@@ -88,8 +88,7 @@ const init = (options) => {
         console.log('Sherlog listening on:');
         console.log('\n');
         console.log(`   - Dashboard:   ${chalk.green(URL)}`);
-        console.log(`   - Local:       ${chalk.green(`ws://localhost:${PORT}`)}`);
-        console.log(`   - Network:     ${chalk.green(`ws://${await internalIp.v4()}:${PORT}`)}`);
+        console.log(`   - Websocket:   ${chalk.green(`ws://localhost:${PORT}`)}`);
         const watch = new Watch(options);
         watch.on('buffer', (buffer) => {
           readableStream.push(toBuffer(buffer, deflate));

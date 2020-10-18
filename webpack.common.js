@@ -2,7 +2,6 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const NodemonPlugin = require('nodemon-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack')
 
 module.exports = {
