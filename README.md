@@ -1,9 +1,22 @@
+<p align="center">
+    <a href="https://travis-ci.com/sherl0g/cli">
+        <img src="https://img.shields.io/travis/sherl0g/cli/main.svg?logo=travis" alt="Build Status">
+    </a>
+    <a href="https://www.npmjs.com/package/@sherlog/cli">
+        <img src="https://img.shields.io/npm/dt/@sherlog/cli" alt="Total Downloads">
+    </a>
+    <a href="https://www.npmjs.com/package/@sherlog/cli">
+        <img src="https://img.shields.io/npm/v/@sherlog/cli.svg?logo=npm" alt="Latest Stable Version">
+    </a>
+    <a href="https://github.com/sherl0g/cli/blob/main/LICENSE">
+        <img src="https://img.shields.io/packagist/l/laravel/jetstream" alt="License">
+    </a>
+</p>
+
 # @sherlog/cli
 > Unified logs as stream.
 
-[![Build Status](https://travis-ci.com/sherl0g/cli.svg?branch=main)](https://travis-ci.com/sherl0g/cli)
-
-Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel free to consume the stream with any other tool or programming language of your preference.
+>Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel free to consume the stream with any other tool or programming language of your preference.
 
 <p align="center">
   <br>
@@ -15,7 +28,7 @@ Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel fr
 
 ## Installation
 
-OS X & Linux `node >=12.16.1`:
+OS X & Linux `node >= v10.9.0`:
 
 ```sh
 npm install -g @sherlog/cli
