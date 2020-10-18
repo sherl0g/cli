@@ -1,8 +1,10 @@
-import {
-  assignIn, groupBy, map, take,
-} from 'lodash';
+import assignIn from 'lodash/assignIn';
+import groupBy from 'lodash/groupBy';
+import map from 'lodash/map';
+import take from 'lodash/take';
 import moment from 'moment-timezone';
 import os from 'os';
+import matchAll from 'string.prototype.matchall';
 
 export default class BaseParser {
   constructor(settings) {
@@ -49,7 +51,7 @@ export default class BaseParser {
 
   dispatch(bufferSize, callback) {
     const metrics = take(this.buffer, bufferSize).join('\n');
-    const matches = [...metrics.matchAll(this.regex)];
+    const matches = [...matchAll(metrics, this.regex)];
     if (matches.length) {
       callback(this.format(map(matches, 'groups')));
     }
