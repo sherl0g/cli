@@ -28,7 +28,7 @@
 
 ## Installation
 
-OS X & Linux `node >= v8.12.0`:
+OS X & Linux `node >= v10.9.0`:
 
 ```sh
 npm install -g @sherlog/cli
