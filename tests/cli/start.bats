@@ -59,7 +59,7 @@ setup() {
 #  usermod -a -G common anonymous
   pwd >&3
   ls -la >&3
-  run "$SUT start --config $PWD/$SHERLOG_CONFIG_FILE_NAME"
+  run "$SUT" start --config "$SHERLOG_CONFIG_FILE_NAME"
 #  deluser anonymous common
 #  userdel -r anonymous
 #  groupdel common
