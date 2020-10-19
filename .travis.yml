@@ -1,4 +1,3 @@
-sudo: required
 dist: bionic
 language: node_js
 node_js:
@@ -14,4 +13,4 @@ script:
   - whoami
   - npm run lint
   - npm run integration:test
-  - sudo npm run cli:test
+  - npm run cli:test
