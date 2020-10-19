@@ -30,7 +30,7 @@ setup() {
   chmod 0000 unreadable.log
   sudo adduser --disabled-password --gecos "" anonymous
   sudo groupadd common
-  chgrp common "$PWD"
+  sudo chgrp common "$PWD"
   chmod 770 "$PWD"
   chmod +s "$PWD"
   sudo usermod -a -G common anonymous
@@ -49,10 +49,10 @@ setup() {
   chmod 0000 unreadable.log
   sudo adduser --disabled-password --gecos "" anonymous
   sudo groupadd common
-  chgrp common "$PWD"
+  sudo chgrp common "$PWD"
   chmod 770 "$PWD"
   chmod +s "$PWD"
-  usermod -a -G common anonymous
+  sudo usermod -a -G common anonymous
   run su anonymous bash -c "$SUT start --config $PWD/$SHERLOG_CONFIG_FILE_NAME"
   sudo deluser anonymous common
   sudo userdel -r anonymous
