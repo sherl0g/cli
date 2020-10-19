@@ -2,16 +2,14 @@ dist: bionic
 language: node_js
 node_js:
   - 10
-  - 11
-  - 12
-  - 13
-  - 14
 install:
   - npm install
 before_script:
   - npm run build
   - npm install -g ./
 script:
+  - cat /etc/passwd
+  - whoami
   - npm run lint
   - npm run integration:test
   - npm run cli:test
