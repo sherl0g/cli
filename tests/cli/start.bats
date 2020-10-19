@@ -38,6 +38,7 @@ setup() {
 #  deluser anonymous common
 #  userdel -r anonymous
 #  groupdel common
+  echo "$output" >&3
   [ "$status" -eq 1 ]
   [ "$output" =  "permission denied $PWD/unreadable.log" ]
 }
@@ -57,6 +58,7 @@ setup() {
 #  deluser anonymous common
 #  userdel -r anonymous
 #  groupdel common
+  echo "$output" >&3
   [ "$status" -eq 1 ]
   [ "$output" =  "permission denied $PWD/unreadable.log" ]
 }
