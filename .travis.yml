@@ -14,4 +14,4 @@ script:
   - whoami
   - npm run lint
   - npm run integration:test
-  - npm run cli:test
+  - sudo npm run cli:test
