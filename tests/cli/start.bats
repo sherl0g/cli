@@ -28,16 +28,16 @@ setup() {
   CONFIG_CONTENT=$(get_fixture ".unreadable")
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   chmod 0000 unreadable.log
-  adduser --disabled-password --gecos "" anonymous
-  groupadd common
+  sudo adduser --disabled-password --gecos "" anonymous
+  sudo groupadd common
   chgrp common "$PWD"
   chmod 770 "$PWD"
   chmod +s "$PWD"
-  usermod -a -G common anonymous
+  sudo usermod -a -G common anonymous
   run su anonymous bash -c "$SUT start --config $PWD/$SHERLOG_CONFIG_FILE_NAME"
-  deluser anonymous common
-  userdel -r anonymous
-  groupdel common
+  sudo deluser anonymous common
+  sudo userdel -r anonymous
+  sudo groupdel common
   [ "$status" -eq 1 ]
   [ "$output" =  "permission denied $PWD/unreadable.log" ]
 }
@@ -47,16 +47,16 @@ setup() {
   CONFIG_CONTENT=$(get_fixture ".unreadable")
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   chmod 0000 unreadable.log
-  adduser --disabled-password --gecos "" anonymous
-  groupadd common
+  sudo adduser --disabled-password --gecos "" anonymous
+  sudo groupadd common
   chgrp common "$PWD"
   chmod 770 "$PWD"
   chmod +s "$PWD"
   usermod -a -G common anonymous
   run su anonymous bash -c "$SUT start --config $PWD/$SHERLOG_CONFIG_FILE_NAME"
-  deluser anonymous common
-  userdel -r anonymous
-  groupdel common
+  sudo deluser anonymous common
+  sudo userdel -r anonymous
+  sudo groupdel common
   [ "$status" -eq 1 ]
   [ "$output" =  "permission denied $PWD/unreadable.log" ]
 }
