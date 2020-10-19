@@ -28,20 +28,7 @@ setup() {
   CONFIG_CONTENT=$(get_fixture ".unreadable")
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   chmod 0000 unreadable.log
-#  adduser --disabled-password --gecos "" anonymous
-#  groupadd common
-#  chgrp common "$PWD"
-#  chmod 770 "$PWD"
-#  chmod +s "$PWD"
-#  usermod -a -G common anonymous
-  pwd >&3
-  ls -la >&3
   run "$SUT" start
-#  deluser anonymous common
-#  userdel -r anonymous
-#  groupdel common
-
-  echo "$output" >&3
   [ "$status" -eq 1 ]
   [ "$output" =  "permission denied $PWD/unreadable.log" ]
 }
@@ -51,18 +38,7 @@ setup() {
   CONFIG_CONTENT=$(get_fixture ".unreadable")
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   chmod 0000 unreadable.log
-#  adduser --disabled-password --gecos "" anonymous
-#  groupadd common
-#  chgrp common "$PWD"
-#  chmod 770 "$PWD"
-#  chmod +s "$PWD"
-#  usermod -a -G common anonymous
-  pwd >&3
-  ls -la >&3
   run "$SUT" start --config "$SHERLOG_CONFIG_FILE_NAME"
-#  deluser anonymous common
-#  userdel -r anonymous
-#  groupdel common
   echo "$output" >&3
   [ "$status" -eq 1 ]
   [ "$output" =  "permission denied $PWD/unreadable.log" ]
