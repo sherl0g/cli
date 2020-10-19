@@ -1,0 +1,10 @@
+{
+  "hostname": "Bruces-MacBook-Pro.local",
+  "files": [
+    {
+      "metric": "monolog",
+      "file": "path/unreadable.log",
+      "timezone": "UTC"
+    }
+  ]
+}

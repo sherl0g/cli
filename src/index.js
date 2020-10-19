@@ -268,8 +268,9 @@ commander
     testConfig(cmd);
     const config = JSON.parse(fs.readFileSync(cmd.config || SHERLOG_CONFIG_FILE_NAME, 'utf8'));
     const promises = map(config.files, (item) => new Promise((resolve, reject) => {
-      fs.access(item.file, fs.constants.F_OK, (err) => {
-        if (err) reject(err.path);
+      // eslint-disable-next-line no-bitwise
+      fs.access(item.file, fs.constants.F_OK | fs.constants.R_OK, (err) => {
+        if (err) reject(err);
         resolve(item.file);
       });
     }));
@@ -282,7 +283,8 @@ commander
         });
       })
       .catch((error) => {
-        console.log(`no such file ${chalk.yellow(error)}`);
+        const message = error.errno === -2 ? 'no such file' : 'permission denied';
+        console.log(`${message} ${chalk.yellow(error.path)}`);
         process.exit(1);
       });
   });
