@@ -39,7 +39,6 @@ setup() {
   echo "${CONFIG_CONTENT//"path"/"$PWD"}" > "$SHERLOG_CONFIG_FILE_NAME"
   chmod 0000 unreadable.log
   run "$SUT" start --config "$SHERLOG_CONFIG_FILE_NAME"
-  echo "$output" >&3
   [ "$status" -eq 1 ]
   [ "$output" =  "permission denied $PWD/unreadable.log" ]
 }
