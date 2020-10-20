@@ -50,7 +50,9 @@ const init = (options) => {
   const app = express();
   const server = http.createServer(app);
 
-  app.use(helmet());
+  app.use(
+    helmet({ contentSecurityPolicy: false }),
+  );
   app.use(cors());
   app.use(compression());
   app.use(bodyParser.json());
