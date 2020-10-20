@@ -1,0 +1,10 @@
+{
+  "hostname": "",
+  "files": [
+    {
+      "metric": "monolog",
+      "file": "path/unreadable.log",
+      "timezone": "UTC"
+    }
+  ]
+}
