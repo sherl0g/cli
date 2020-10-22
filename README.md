@@ -25,7 +25,6 @@ Sherlog CLI is bundled with [Prisma](https://github.com/sherl0g/prisma). Feel fr
   <br>
 </p>
 
-Demo: <a href="https://sherlog.sh" target="_blank">https://sherlog.sh</a>
 
 ## Installation
 

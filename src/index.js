@@ -2,10 +2,13 @@
 
 import fs from 'fs';
 import path from 'path';
-import {
-  assign, compact, debounce, get,
-  isEmpty, map, size,
-} from 'lodash';
+import assign from 'lodash/assign';
+import compact from 'lodash/compact';
+import debounce from 'lodash/debounce';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import map from 'lodash/map';
+import size from 'lodash/size';
 import portfinder from 'portfinder';
 import bodyParser from 'body-parser';
 import cors from 'cors';
