@@ -1,6 +1,6 @@
 {
   "name": "@sherlog/cli",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "bin/sherlog.js",
   "author": "Bruce Lampson <brucelampson@gmail.com>",
   "description": "In-Memory observability for service logs",
