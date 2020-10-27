@@ -1,7 +1,6 @@
-import assignIn from 'lodash/assignIn';
-import groupBy from 'lodash/groupBy';
-import map from 'lodash/map';
-import take from 'lodash/take';
+import {
+  assignIn, groupBy, map, take,
+} from 'lodash';
 import moment from 'moment-timezone';
 import os from 'os';
 import matchAll from 'string.prototype.matchall';
