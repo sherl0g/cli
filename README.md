@@ -9,7 +9,7 @@
         <img src="https://img.shields.io/npm/v/@sherlog/cli.svg?logo=npm" alt="Latest Stable Version">
     </a>
     <a href="https://github.com/sherl0g/cli/blob/main/LICENSE">
-        <img src="https://img.shields.io/packagist/l/laravel/jetstream" alt="License">
+        <img src="https://img.shields.io/github/license/sherl0g/cli" alt="License">
     </a>
 </p>
 
