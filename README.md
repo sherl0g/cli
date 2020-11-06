@@ -78,7 +78,7 @@ sherlog init
 * `chunks`: max items stored in buffer for each metric chunk (default: `1`).
 * `compression`: uses [pako](https://github.com/nodeca/pako) to compress messages sent over to [Prisma](https://github.com/sherl0g/prisma). Set to `false` if you wish to consume the stream with a different tool  (default: `true`).
 * `files`: an array of services to monitor. The following options can be configured for each file.
-  * `metric`: supported metrics `apache2|monolog|mysql|nginx|php-fpm|redis`
+  * `metric`: supported metrics `apache2|monolog|mysql|nginx|phpfpm|redis`
   * `file`: the absolute path to your log file.
   * `eventType`: apache2 and/or nginx requires this property to be set to one of the following `http|error`.
   * `timezone`: IANA time zone in which your logs are stored (e.g UTC, America/New York, etc),
