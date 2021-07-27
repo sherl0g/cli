@@ -43,7 +43,7 @@
     "ajv": "^6.12.4",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
-    "commander": "^6.0.0",
+    "commander": "^8.1.0",
     "compression": "^1.7.4",
     "console-clear": "^1.1.1",
     "cors": "^2.8.5",
